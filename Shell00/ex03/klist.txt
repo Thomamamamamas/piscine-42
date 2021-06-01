@@ -1,0 +1,5 @@
+Credentials cache: API:4479
+        Principal: tcasale@42NICE.FR
+
+  Issued                Expires               Principal
+May 31 12:25:18 2021  May 31 22:25:11 2021  krbtgt/42NICE.FR@42NICE.FR
