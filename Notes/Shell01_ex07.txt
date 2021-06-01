@@ -1,0 +1,2 @@
+rev : inverse tout les carateres de chaque ligne
+sort -r : trie a l'inverse de l'ordre alphabetique	
