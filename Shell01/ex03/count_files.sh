@@ -1,2 +1,2 @@
 #!/bin/zsh
-find . -type f -o -type d | wc -l | tr " " "\0"
+find . -type f -o -type d | wc -l | tr -d " "

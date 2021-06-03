@@ -1,2 +1,2 @@
 #!/bin/zsh
-git log | grep "commit " | cut -c 8- | tail -n 5
+git log -5 --pretty=%H
