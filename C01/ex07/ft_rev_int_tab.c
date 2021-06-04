@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:01:07 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/04 11:18:26 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/04 11:44:50 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/04 12:57:42 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+#include <stdio.h>
+void	ft_rev_int_tab(int *tab, int size)
 {
 	int	n;
+	int temp[size];
 
 	n = 0;
-	while (str[n])
+	while (tab[n])
 	{
-		write(1, &str[n], 1);
+		temp[n] = tab[-n];
 		n++;
 	}
+	int	i;
+
+	i = 0;
+	while (temp[i])
+	{
+		printf("%d", temp[i]);
+		tab[i] = temp[i];
+	}
+}
+
+int main()
+{
+	int size = 4;
+	int tab[size];
+	tab[0] = 0;
+	tab[1] = 1;
+	tab[2] = 2;
+	tab[3] = 3;
+	ft_rev_int_tab(&tab, size);
 }
