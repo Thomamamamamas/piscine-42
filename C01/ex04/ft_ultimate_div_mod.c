@@ -6,10 +6,10 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 16:47:17 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/03 16:57:23 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/05 15:57:29 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_ultimate_div_void(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int	temp;
 

@@ -1,26 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 11:44:50 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/05 16:14:50 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/04 17:25:02 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/05 15:03:08 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_rev_int_tab(int *tab, int size)
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	int	x;
+	int	y;
+	int j;
+
+	x = ft_strlen(dest);
+	y = ft_strlen(src);
+	y = 0;
+	j = 0;
+	while (src[n])
+	{
+		j++;
+		if (x == y)
+		{
+			dest[j] = src[j];
+		}
+	}
+}
+
+int		ft_strlen(char str)
 {
 	int	n;
-	int	temp;
 
 	n = 0;
-	while (n < size)
+	if (str = 0)
 	{
-		temp = tab[n];
-		tab[n] = tab[size];
-		tab[size] = temp;
-		size = size - 1;
+		return (0);
+	}
+	while (str[n])
+	{
 		n++;
 	}
+	return (n);
+}
+
+int	main()
+{
+	char	str1[11] = "Pute";
+	char	str2[15] = "Pupute";
+	unsigned int n = 10;
+	ft_srncpy(str1, str2, n);
 }
