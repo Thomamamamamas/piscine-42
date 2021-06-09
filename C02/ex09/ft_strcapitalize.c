@@ -6,43 +6,69 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 16:34:12 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/09 12:53:58 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/09 18:24:16 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int		is_uppercase(char s);
+int		is_lowercase(char s);
+int		is_numeric(char s);
+int		is_not_alphanumeric(char s);
+
+int	is_uppercase(char s)
+{
+	if (s >= 'A' && s <= 'Z')
+		return (1);
+	return (0);
+}
+
+int	is_lowercase(char s)
+{
+	if (s >= 'a' && s <= 'z')
+		return (1);
+	return (0);
+}
+
+int	is_numeric(char s)
+{
+	if (s >= '0' && s <= '9')
+		return (1);
+	return (0);
+}
+
+int	is_not_alphanumeric(char s)
+{
+	if (!(is_lowercase(s)) && !(is_numeric(s)) && !(is_uppercase(s)))
+		return (1);
+	return (0);
+}
+
+char	*ft_strcapitalize(char *str)
+{
+	char	prev[0];
+	int		n;
+
+	n = 0;
+	prev[0] = ' ';
+	while (str[n])
+	{
+		if (is_lowercase(str[n]) && is_not_alphanumeric(prev[0]))
+			str[n] = str[n] - 32;
+		else if (is_uppercase(str[n]) && !(is_not_alphanumeric(prev[0])))
+			str[n] = str[n] + 32;
+		prev[0] = str[n];
+		n++;
+	}
+	return (str);
+}
+/*
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-void	define_last_char(char *last_char, char *str, int n);
-char	*ft_strcapitalize(char *str)
-{
-	int		n;
-	char	last_char[0];
-
-	n = 0;
-	last_char[0] = ' ';
-	while (str[n])
-	{
-		if (!(last_char[0] >= 65 && last_char[0] <= 90))
-		{
-			if (str[n] >= 97 && str[n] <= 122)
-				str[n] = str[n] -32;
-		}
-		else if (!(last_char[0] >= 97 && last_char <= 122))
-		{
-			
-		}
-		
-		
-		last_char[0] = str[n];
-		n++;
-	}
-	printf("%s\n", str);
-	return (str);
-}
-
 int main()
 {
 	char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 	ft_strcapitalize(str);
+	printf("%s\n", str);
 	return 0;
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 10:34:06 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/09 12:54:43 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/09 15:16:34 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,19 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (res);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int	main()
+{
+	char	str1[] = "test";
+	char	str2[] = "toto";
+	char	s1[] = "test";
+	char	s2[] = "toto";
+	int	n = strcmp (str1, str2);
+	int	m = ft_strcmp(s1, s2);
+	printf("%d\n", n);
+	printf("%d\n", m);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 16:03:39 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/08 17:36:12 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/09 17:18:15 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strlowcase(char *str)
@@ -16,7 +16,7 @@ char	*ft_strlowcase(char *str)
 	n = 0;
 	while (str[n])
 	{
-		if (str[n] >= 65 && str[n] <= 90)
+		if (str[n] >= 'A' && str[n] <= 'Z')
 		{
 			str[n] = str[n] + 32;
 		}

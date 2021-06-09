@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:20:19 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/08 16:56:44 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/09 15:44:11 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,20 @@ char	*ft_strcpy(char *dest, char *src)
 	dest[n] = '\0';
 	return (dest);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int	main()
+{
+	char	src1[] = "test";
+	char	dst1[] = "toto";
+	char	src2[] = "test";
+	char	dst2[] = "toto";
+	strcpy(dst1, src1);
+	ft_strcpy(dst2, src2);
+	printf("%s\n", dst1);
+	printf("%s\n", dst2);
+	return (0);
+}
+*/

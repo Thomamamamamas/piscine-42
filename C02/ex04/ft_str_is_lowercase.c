@@ -9,7 +9,7 @@ int	ft_str_is_lowercase(char *str)
 	}
 	while (str[n])
 	{
-		if (!(str[n] >= 97 && str[n] <= 122))
+		if (!(str[n] >= "a" && str[n] <= "z"))
 		{
 			return (0);
 		}
