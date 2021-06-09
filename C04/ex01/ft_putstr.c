@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 17:58:29 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/08 17:29:37 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/09 14:29:37 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/09 14:29:39 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+#include <unistd.h>
+void	ft_putstr(char *str)
 {
 	int	n;
 
 	n = 0;
-	if (str[0] == '\0')
-	{
-		return (0);
-	}
 	while (str[n])
 	{
-		if (!(str[n] >= 97 && str[n] <= 122) && !(str[n] >= 65 && str[n] <= 90))
-		{
-			if (!(str[n] >= 48 && str[n] <= 57))
-			{
-				return (0);
-			}
-		}
+		write(1, &str[n], 1);
 		n++;
 	}
-	return (1);
 }
+/*
+int	main()
+{
+	char	str[] = "test";
+	ft_putstr(str);
+	return (0);
+}
+*/

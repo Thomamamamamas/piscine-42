@@ -1,2 +1,2 @@
-#!/bin/zsh
-git ls-files --exclude-standard --others
+#!/bin/sh
+git status -s --ignored | grep '!!' | sed 's/!! //'

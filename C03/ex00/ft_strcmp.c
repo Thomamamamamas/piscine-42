@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 17:58:29 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/08 17:29:37 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/08 10:34:06 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/09 12:54:43 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	n;
+	int	m;
+	int	res;
 
 	n = 0;
-	if (str[0] == '\0')
+	m = 0;
+	res = 0;
+	while (s1[n])
 	{
-		return (0);
-	}
-	while (str[n])
-	{
-		if (!(str[n] >= 97 && str[n] <= 122) && !(str[n] >= 65 && str[n] <= 90))
+		m = n;
+		if (s2[m])
 		{
-			if (!(str[n] >= 48 && str[n] <= 57))
+			if (s1[n] != s2[m])
 			{
-				return (0);
+				res = res + s1[n] - s2[m];
+				break ;
 			}
 		}
 		n++;
 	}
-	return (1);
+	return (res);
 }

@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 17:58:29 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/08 17:29:37 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/08 13:39:30 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/09 12:55:28 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	n;
+	unsigned int	m;
 
 	n = 0;
-	if (str[0] == '\0')
+	m = 0;
+	while (dest[n])
+		n++;
+	while (m < nb)
 	{
-		return (0);
-	}
-	while (str[n])
-	{
-		if (!(str[n] >= 97 && str[n] <= 122) && !(str[n] >= 65 && str[n] <= 90))
+		if (src[m])
 		{
-			if (!(str[n] >= 48 && str[n] <= 57))
+			if (src[m] != '\0')
 			{
-				return (0);
+				dest[n] = src[m];
+				n++;
+			}
+			else if (src[m] == '\0')
+			{
+				dest[n] = '\0';
+				n++;
 			}
 		}
-		n++;
+		m++;
 	}
-	return (1);
+	return (dest);
 }

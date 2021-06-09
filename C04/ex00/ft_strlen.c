@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 17:58:29 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/08 17:29:37 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/09 14:29:18 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/09 14:29:21 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_strlen(char *str)
 {
 	int	n;
 
 	n = 0;
-	if (str[0] == '\0')
-	{
-		return (0);
-	}
 	while (str[n])
 	{
-		if (!(str[n] >= 97 && str[n] <= 122) && !(str[n] >= 65 && str[n] <= 90))
-		{
-			if (!(str[n] >= 48 && str[n] <= 57))
-			{
-				return (0);
-			}
-		}
 		n++;
 	}
-	return (1);
+	return (n);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int	main()
+{
+	char	str[] = "p";
+	int n = strlen(str);
+	int m = ft_strlen(str);
+	printf("%d\n", n);
+	printf("%d\n", m);
+	return (0);
+}
+*/
