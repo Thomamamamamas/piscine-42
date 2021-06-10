@@ -1,6 +1,14 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/10 12:35:51 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/10 12:35:58 by tcasale          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int		ft_strlen(char *str)
 {
@@ -12,47 +20,19 @@ int		ft_strlen(char *str)
 	return (n);
 }
 
-void	ft_checkstrstr(char *str, char *to_find, int valide)
+int	ft_checkstrstr(char *str, char *to_find, int valide)
 {
 	if (str == to_find && valide == 1)
 		return (1);
+	return (0);
 }
-
-char	exchamgestr(char *str,
-
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int	n;
-	int	temp;
-	int	i;
-	int	start
-	int	size;
 
-	n = 0;
-	size = ft_strlen(to_find);
-	while (str[n])
-	{
-		i = 0;
-		temp = n
-		if (to_find[i] == str[n])
-		{
-			start = i;
-			while (to_find[i])
-			{
-				i++;
-				n++;
-				valide = ft_checkstrstr(str[n], to_find[i], valide);
-				if (i == size)
-					return (exchangestr(str, start, ft_strlen(str))
-			}
-			n = temp;
-		}
-		n++;
-	}
-	return (NULL);
 }
 
+/*
 int	main()
 {
 	char	str[] = "LOL";
@@ -63,3 +43,4 @@ int	main()
 	printf("%s\n", res2);
 	return (0);
 }
+*/

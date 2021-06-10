@@ -6,35 +6,21 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:25:02 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/10 11:57:11 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/10 15:10:22 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int	m;
-	unsigned int	size;
+	unsigned int	i;
 
-	size = 0;
-	m = 0;
-	while (dest[size])
-		size++;
-	while (m < n)
-	{
-		if (src[m])
-			dest[m] = src[m];
-		else
-			dest[m] = '\0';
-		m++;
-	}
-	while (m < size)
-	{
-		dest[m] = '\0';
-		m++;
-	}
-	dest[size] = '\0';
+	i = -1;
+	while (++i < n && src[i])
+		dest[i] = src[i];
+	while (i < n)
+		dest[i++] = '\0';
 	return (dest);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>
