@@ -6,17 +6,15 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:25:02 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/09 17:02:42 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/10 11:57:11 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	m;
-	unsigned int	i;
 	unsigned int	size;
 
-	i = n;
 	size = 0;
 	m = 0;
 	while (dest[size])
@@ -24,10 +22,14 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	while (m < n)
 	{
 		if (src[m])
-		{
 			dest[m] = src[m];
-			i++;
-		}
+		else
+			dest[m] = '\0';
+		m++;
+	}
+	while (m < size)
+	{
+		dest[m] = '\0';
 		m++;
 	}
 	dest[size] = '\0';
@@ -35,9 +37,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 }
 /*
 #include <stdio.h>
-#i
-c1r1p1% gcc ft_strncpy.cnclude <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 int	main()
 {
 	char	src1[] = "testtest";

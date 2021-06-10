@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:02:19 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/09 15:30:43 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/10 10:47:22 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		if (s1[m] && s2[m] && s1[m] != s2[m])
 		{
 			res = res + s1[m] - s2[m];
-			break ;
+			return (res) ;
 		}
 		m++;
 	}

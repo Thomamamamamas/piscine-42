@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 14:34:16 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/09 17:14:24 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/10 11:59:10 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_str_is_uppercase(char *str)
@@ -20,7 +20,7 @@ int	ft_str_is_uppercase(char *str)
 	}
 	while (str[n])
 	{
-		if (!(str[n] >= "A" && str[n] <= "Z"))
+		if (!(str[n] >= 'A' && str[n] <= 'Z'))
 		{
 			return (0);
 		}

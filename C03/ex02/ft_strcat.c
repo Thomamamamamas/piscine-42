@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 13:25:56 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/09 12:55:04 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/10 10:52:10 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,20 @@ char	*ft_strcat(char *dest, char *src)
 	}
 	return (dest);
 }
+/*
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+int	main()
+{
+	char	dest1[10] = "lol";
+	char	src1[5] = "mdr";
+	char	dest2[10] = "lol";
+	char	src2[5] = "mdr";
+	strcat(dest1, src1);
+	ft_strcat(dest2, src2);
+	printf("%s\n", dest1);
+	printf("%s\n", dest2);
+	return (0);
+}
+*/
