@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 13:25:56 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/10 10:52:10 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/11 16:59:47 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strcat(char *dest, char *src)
 			dest[n] = src[m];
 			n++;
 		}
+		dest[n] = '\0';
 		m++;
 	}
 	return (dest);

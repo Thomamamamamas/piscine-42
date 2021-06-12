@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:25:02 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/10 15:10:22 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:05:49 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
