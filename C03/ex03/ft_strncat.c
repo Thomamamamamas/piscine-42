@@ -12,37 +12,18 @@
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int	n;
-	unsigned int	m;
+	char	*temp;
+	int	m;
 
-	n = 0;
+	temp = dest;
 	m = 0;
-	while (dest[n])
-		n++;
-	while (m < nb)
+	while (*temp)
+		temp++;
+	while (m < nb && *src)
 	{
-		if (src[m])
-		{
-			if (src[m] != '\0')
-			{
-				dest[n] = src[m];
-				n++;
-			}
-		}
+		*temp++ = *src++;
 		m++;
 	}
-	dest[n] = '\0';
+	*temp = '\0';
 	return (dest);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main()
-{
-	char	src2[] = "test";
-	char dest2[] = " pute";
-	ft_strncat(dest2, src2, 5);
-   printf("%s\n", dest2);
-}
-*/

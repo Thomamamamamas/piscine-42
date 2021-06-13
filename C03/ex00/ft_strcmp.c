@@ -12,27 +12,12 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	n;
-	int	m;
-	int	res;
-
-	n = 0;
-	m = 0;
-	res = 0;
-	while (s1[n])
+	while (*s1 && *s1 == *s2)
 	{
-		m = n;
-		if (s2[m])
-		{
-			if (s1[n] != s2[m])
-			{
-				res = res + s1[n] - s2[m];
-				return (res);
-			}
-		}
-		n++;
+		s1++;
+		s2++;
 	}
-	return (res);
+	return (*s1 - *s2);
 }
 /*
 #include <stdio.h>
@@ -41,9 +26,9 @@ int	ft_strcmp(char *s1, char *s2)
 int	main()
 {
 	char	str1[] = "test";
-	char	str2[] = "toto";
+	char	str2[] = "";
 	char	s1[] = "test";
-	char	s2[] = "toto";
+	char	s2[] = "";
 	int	n = strcmp (str1, str2);
 	int	m = ft_strcmp(s1, s2);
 	printf("%d\n", n);

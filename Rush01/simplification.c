@@ -1,3 +1,10 @@
+/*le programme commence par regarder coll1up et coll1down (voir sujet) puis si c'est une combinaison simple, (1 et 4 ou 3 et 2)
+rempli les colonnes concernés ave les bons nombres. PB il peut (il y aura) des incohérences sur les lignes mais si j'ai bien
+compris ton code les corriges. Je parcours pas le tableaux à l'aide des row1left et row1right car le tableau sera normalemnt
+remplis a la fin du parcours de void *simplification_haut, meme si il y aura des erreurs, comme dit au dessus
+le main, init_zero et init_side servent pour le debuggage.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 int	*init_zero_mat(int size)
@@ -14,18 +21,18 @@ int	*init_zero_mat(int size)
 	return (mat);
 }
 
-void	*init_side(size)
+void	*init_side(int size)
 {
 	int	*mat;
 	mat = (int*)malloc(sizeof(int) * size * size);
 	mat[0] = 4;
 	mat[1] = 1;
-	mat[2] = 1;
-	mat[3] = 1;
+	mat[2] = 2;
+	mat[3] = 3;
 	mat[4] = 1;
-	mat[5] = 1;
-	mat[6] = 1;
-	mat[7] = 1;
+	mat[5] = 4;
+	mat[6] = 3;
+	mat[7] = 2;
 	mat[8] = 4;
 	mat[9] = 1;
 	mat[10] = 1;
@@ -89,22 +96,60 @@ int	get_end_pos(int size, int start_pos, int i)
 	return (end_pos);
 }
 
+//Si on a 2 et 3 sur le cotes
+void	case_2_3(int *tab, int n, int start_pos, int situation)
+{
+	if (situation == 0)
+	{
+		if (n == 1)
+			tab[start_pos] = 3;
+		else if (n == 2)
+			tab[start_pos] = 4;
+		else if (n == 3)
+			tab[start_pos] = 2;
+		else
+			tab[start_pos] = 1;
+	}
+	else if (situation == 1)
+	{
+		if (n <3)
+			tab[start_pos] = n;
+		else if (n == 3)
+			tab[start_pos] = 4;
+		else
+			tab[start_pos] = 3;
+	}
+}
+
 //Simplifie quand pos est egal a 0
-void	simplification_haut(int *tab, int size, int *side, int i)
+void	*simplification_haut(int *tab, int size, int *side, int i)
 {
 	int	start_pos;
 	int	end_pos;
 	int	n;
 
-	n = 0;
+	n = 1;
 	start_pos = get_start_pos(size, i);
 	end_pos = get_end_pos(size, start_pos, i);
-	while (start_pos < end_pos)
+	while (start_pos <= end_pos)
 	{
-		if ((side[i] == 4 && side[i+4] == 1) && tab[start_pos] == 0)
-			tab[start_pos] = n;
+		if (tab[start_pos] == 0)
+		{
+			if (side[i] == 4 && side[i+4] == 1)
+				tab[start_pos] = n;
+			else if (side[i] == 1 && side[i + 4] == 4)
+				tab[start_pos] = size - (n - 1);
+			else if (side[i] == 2 && side[i + 4] == 3)
+			{
+				case_2_3(tab, n, start_pos, 0);
+			}
+			else if (side[i] == 3 && side[i + 4] == 2)
+			{
+				case_2_3(tab, n, start_pos, 1);
+			}
+		}
 		n++;
-		start_pos++;
+		start_pos += size;
 	}
 }
 
@@ -120,7 +165,10 @@ void	init_simplification(int *tab, int size, int *side)
 	pos = 0; 
 	while (side[i])
 	{
-		if (side[i] == 1 || side[i] == 4)
+		if ((side[i] == 1 && side[i + 4] == 4) || \
+			(side[i] == 4 && side[i + 4] == 1) || \
+			(side[i] == 3 && side[i + 4] == 2) || \
+			(side[i] == 2 && side[i + 4] == 3))
 		{
 			if (pos == 0 || pos == 1)
 				simplification_haut(tab, size, side, i);
@@ -134,5 +182,18 @@ int	main()
 	int	*tab = init_zero_mat(4);
 	int	*side = init_side(4);
 	init_simplification(tab, 4, side);
+
+	int	n;
+
+	n = 0;
+	while (tab[n])
+	{
+		if (n % 4 == 0)
+		{
+			printf("\n");
+		}
+		printf("%d ", tab[n]);
+		n++;
+	}
 	return (0);
 }

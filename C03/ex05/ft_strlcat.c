@@ -9,9 +9,10 @@
 /*   Updated: 2021/06/11 18:48:23 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-unsigned int	ft_strlen(char *str)
+
+int				ft_strlen(char *str)
 {
-	unsigned int	n;
+	int n;
 
 	n = 0;
 	while (str[n])
@@ -27,11 +28,11 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	i = 0;
 	while (i < size && *dest)
 	{
-		i++;
 		dest++;
+		i++;
 	}
 	if (i == size)
-		return ( i + ft_strlen(src));
+		return (i + (unsigned int)ft_strlen(src));
 	j = 0;
 	while (src[j])
 	{
@@ -41,18 +42,4 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	*dest = '\0';
 	return (i + j);
-
-}
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int	main()
-{
-	int		n = 7;
-	char	dest2[] = "LOL";
-	char	src2[] = "MDR";
-	ft_strlcat(dest2, src2, n);
-	printf("%s\n", dest2);
 }
