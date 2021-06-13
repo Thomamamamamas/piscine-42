@@ -6,13 +6,13 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 15:48:32 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/11 18:48:23 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/13 17:18:31 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int				ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (str[n])

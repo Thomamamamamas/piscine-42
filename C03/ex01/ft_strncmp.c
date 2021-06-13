@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:02:19 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/12 11:49:14 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/13 17:17:29 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
+/*
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -40,4 +40,4 @@ int	main()
 	printf("%d\n", i);
 	printf("%d\n", j);
 }
-
+*/
