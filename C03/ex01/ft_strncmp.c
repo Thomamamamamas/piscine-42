@@ -6,38 +6,28 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:02:19 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/13 17:17:29 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/15 14:29:48 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	m;
-	int				res;
+	unsigned int	i;
+	unsigned char	cmp_1;
+	unsigned char	cmp_2;
 
-	m = 0;
-	while (m < n && *s1 == *s2)
+	i = 0;
+	if (!n)
+		return (n);
+	cmp_1 = (unsigned char)s1[i];
+	cmp_2 = (unsigned char)s2[i];
+	while ((cmp_1 && cmp_2) && (i < n))
 	{
-		m++;
+		cmp_1 = (unsigned char)s1[i];
+		cmp_2 = (unsigned char)s2[i];
+		if (cmp_1 != cmp_2)
+			return (cmp_1 - cmp_2);
+		i++;
 	}
-	if (*s1 != *s2)
-	{
-		return ((unsigned char)*s1 - (unsigned char)*s2);
-	}
-	return (0);
+	return (cmp_1 - cmp_2);
 }
-/*
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	char	s1[] = "\200";
-	char	s2[] = "\0";
-	int		n = 6;
-	int		i = strncmp(s1, s2, n);
-	int		j = ft_strncmp(s1, s2, n);
-	printf("%d\n", i);
-	printf("%d\n", j);
-}
-*/

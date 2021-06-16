@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 13:39:30 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/13 17:16:25 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/14 17:35:11 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/14 17:36:03 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char	*temp;
-	int		m;
+	char			*temp;
+	unsigned int	m;
 
 	temp = dest;
 	m = 0;
