@@ -1,7 +1,7 @@
 int	ft_sqrt(int nb)
 {
-	int	i;
-	int	res;
+	unsigned int	i;
+	int				res;
 
 	i = 1;
 	res = 0;
@@ -9,7 +9,7 @@ int	ft_sqrt(int nb)
 		return (0);
 	else if (nb == 1)
 		return (1);
-	while (i <= nb / 2)
+	while (i * i <= (unsigned int)nb)
 	{
 		res = nb / i;
 		if (res * res == nb)

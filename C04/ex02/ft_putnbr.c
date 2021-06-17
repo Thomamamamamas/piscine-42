@@ -6,7 +6,7 @@
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 14:59:06 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/15 16:31:17 by tcasale          ###   ########.fr       */
+/*   Updated: 2021/06/17 09:35:00 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,21 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
+	unsigned int	n;
+
 	if (nb < 0)
 	{
 		ft_putchar('-');
-		nb = -nb;
+		n = -nb;
 	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + '0');
+	else
+		n = nb;
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		n %= 10;
+	}
+	ft_putchar(n + '0');
 }
 /*
 int	main()
