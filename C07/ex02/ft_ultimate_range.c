@@ -1,45 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcasale <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/09 14:59:06 by tcasale           #+#    #+#             */
-/*   Updated: 2021/06/17 10:21:54 by tcasale          ###   ########.fr       */
+/*   Created: 2021/06/17 10:58:12 by tcasale           #+#    #+#             */
+/*   Updated: 2021/06/17 11:11:01 by tcasale          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	diff;
 
-void	ft_putnbr(int nb)
-{
-	unsigned int	n;
-
-	if (nb < 0)
+	i = 0;
+	diff = max - min;
+	*range = malloc(diff * sizeof(int));
+	if (min >= max)
 	{
-		ft_putchar('-');
-		n = -nb;
+		*range = NULL;
+		return (0);
 	}
-	else
-		n = nb;
-	if (n > 9)
+	if (!*range)
+		return (-1);
+	while (i < diff)
 	{
-		ft_putnbr(n / 10);
-		n %= 10;
+		(*range)[i] = min;
+		i++;
+		min++;
 	}
-	ft_putchar(n + '0');
+	return (diff);
 }
 /*
+#include <stdio.h>
+
 int	main()
 {
-	int	nb = -42;
-	ft_putnbr(nb);
+	int	i;
+	int	*range;
+
+	i = 0;
+	ft_ultimate_range(&range, 1, 6);
+	while(i < 5)
+	{
+		printf("%d\n", range[i]);
+		i++;
+	}
 	return (0);
 }
 */
