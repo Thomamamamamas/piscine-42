@@ -53,7 +53,7 @@ int		main(int argc, char **argv)
 	int i;
 
 	ft_sort_str_tab(argv + 1, argc - 1);
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		while (*argv[i])
